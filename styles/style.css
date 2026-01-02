@@ -1,0 +1,148 @@
+:root {
+    --main-color: #6719E6;
+    --main-color-modal: rgb(103 25 230 / .7);
+    --second-color: #fff;
+    --third-color: #000;
+    --third-color-modal: rgb(0 0 0 / .8);
+}
+html {
+    font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+h1,
+h2{
+    margin: 0;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.background {
+    background-color: var(--third-color-modal);
+    color: var(--second-color);
+    height: 100vh;
+    width: 100vw;
+}
+.boton button{
+    position: fixed;
+    z-index: 999;
+    right: 1rem;
+    bottom: 1rem;
+    background-color: var(--third-color);
+    color: var(--second-color);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.5rem;
+    transition: all .2s ease;
+}
+.boton button:hover {
+    width: 5.5rem;
+    height: 5.5rem;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--main-color-modal);
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: visible;
+}
+.menu a {
+    text-align: center;
+    width: 100%;
+    padding: 2rem 0;
+    color: var(--second-color);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 200;
+    transition: all .3s ease;
+}
+.menu a:hover {
+    background-color: var(--third-color);
+    font-weight: bold;
+}
+.menu-enlace {
+    position: relative;
+}
+.menu img {
+    height: 1.5rem;
+    filter: invert(1);
+    transition: opacity .3s ease;
+    margin-left: 10rem;
+}
+.menu span {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 2.2rem;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+.menu a:last-child span{
+    left: 2rem;
+}
+.menu span:hover {
+    opacity: 1;
+}
+.menu-activation {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Garou */
+.section-garou {
+    background-color: var(--main-color);
+    height: 100vh;
+    color: var(--second-color);
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 20% 50% 20%;
+    padding-top: 5rem;
+    padding-left: 5rem;
+}
+.section-garou h2 {
+    font-size: 8rem;
+}
+.section-garou p {
+    font-size: 3rem;
+    font-weight: 200;
+}
+.section-garou img {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    height: 100%;
+    transition: transform .5s ease-in-out;
+    transform: translate(200%, 0);
+}
+.botones {
+    display: flex;
+    justify-content: space-between;
+}
+.botones button {
+    background-color: transparent;
+    color: var(--second-color);
+    height: 5rem;
+    width: 25rem;
+    border-radius: 5rem;
+    border: thin solid var(--second-color);
+    font-size: 2rem; 
+    font-weight: 150;
+    transition: font-weight .2s ease;
+}
+.botones button:hover {
+    background-color: var(--second-color);
+    font-weight: bold;
+    color: var(--third-color);
+}
