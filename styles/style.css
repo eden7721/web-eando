@@ -4,6 +4,7 @@
     --second-color: #fff;
     --third-color: #000;
     --third-color-modal: rgb(0 0 0 / .8);
+    --fourth-color: #e70012;
 }
 html {
     font-family: "Roboto", sans-serif;
@@ -145,4 +146,57 @@ main {
     background-color: var(--second-color);
     font-weight: bold;
     color: var(--third-color);
+}
+
+/* Saitama */
+
+.section-saitama {
+    background-color: var(--fourth-color);
+    height: 100vh;
+    color: var(--second-color);
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 20% 50% 20%;
+    padding-top: 5rem;
+    padding-left: 5rem;
+}
+.section-saitama h2 {
+    font-size: 8rem;
+}
+.section-saitama p {
+    font-size: 3rem;
+    font-weight: 200;
+}
+.section-saitama img {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    height: 100%;
+    transition: transform .5s ease-in-out;
+    transform: translate(200%, 0);
+}
+
+/* Punpun */
+.section-punpun {
+    background-color: var(--fourth-color);
+    height: 100vh;
+    color: var(--second-color);
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 20% 50% 20%;
+    padding-top: 5rem;
+    padding-left: 5rem;
+}
+.section-punpun h2 {
+    font-size: 8rem;
+}
+.section-punpun p {
+    font-size: 3rem;
+    font-weight: 200;
+}
+.section-punpun img {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    height: 100%;
+    transition: transform .5s ease-in-out;
+    transform: translate(200%, 0);
 }
