@@ -200,3 +200,54 @@ main {
     transition: transform .5s ease-in-out;
     transform: translate(200%, 0);
 }
+
+/* Sun Wukong */
+.section-wukong {
+    background-color: var(--fourth-color);
+    height: 100vh;
+    color: var(--second-color);
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 20% 50% 20%;
+    padding-top: 5rem;
+    padding-left: 5rem;
+}
+.section-wukong h2 {
+    font-size: 8rem;
+}
+.section-wukong p {
+    font-size: 3rem;
+    font-weight: 200;
+}
+.section-wukong img {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    height: 100%;
+    transition: transform .5s ease-in-out;
+    transform: translate(200%, 0);
+}
+.section-wukong .botones button {
+    background-color: transparent;
+    color: var(--second-color);
+    height: 5rem;
+    width: 19rem;
+    border-radius: 5rem;
+    border: thin solid var(--second-color);
+    font-size: 2rem; 
+    font-weight: 150;
+    transition: font-weight .2s ease;
+}
+
+.section-wukong .botones button:hover {
+    background-color: var(--second-color);
+    font-weight: bold;
+    color: var(--third-color);
+}
+
+
+/* adicionales */
+.estado-hover {
+    background-color: var(--second-color) !important;
+    font-weight: bold !important;
+    color: var(--third-color) !important;
+}
