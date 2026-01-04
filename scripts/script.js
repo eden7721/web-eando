@@ -1,3 +1,7 @@
 import { btnMenu } from "./funciones/boton.js";
 
-btnMenu(".btn", ".menu", ".btn-personaje");
+const d = document;
+
+d.addEventListener("DOMContentLoaded", e => {
+    btnMenu(".btn", ".menu", ".btn-personaje");
+});
