@@ -1,0 +1,80 @@
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+:root {
+    --color-one: #d9d9d9;
+    --color-two: #f3aaaa;
+}
+.selector-imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    /*background-color: #f3aaaa08;*/
+}
+.container{
+    width: 30vw;
+    height: 80vh;
+    border: medium solid var(--color-one);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: var(--color-two);
+}
+.container-imgs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: inherit;
+    width: 70%;
+}
+.container-imgs img {
+    position: absolute;
+    max-width: 20vw;
+    height: auto;
+    padding: 2rem;
+}
+.selector-imgs button {
+    background-color: var(--color-two);
+    position: absolute;
+    border: 0;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    font-weight: 100;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .1s ease;
+}
+.selector-imgs button:hover {
+    background-color: var(--color-one);
+    border: thin solid var(--color-two);
+}
+.selector-imgs button:first-child {
+    left: 1rem;
+    top: 50%;
+}
+.selector-imgs button:nth-child(2) {
+    right: 1rem;
+    top: 50%;
+}
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s ease;
+}
+
