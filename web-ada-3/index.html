@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+
+<body>
+    <h1>Tareas del Día</h1>
+    <h2>Fecha</h2>
+
+    <form id="form-1" class="form-cantidad-tareas">
+        <label name="cantidadTareasFinal">Tareas por día</label>
+        <input name="cantidadTareas" type="number" placeholder="Número de tareas">
+        <input class="btn-form-1" name="btnCantidad" type="submit" value="Crear Tareas">
+    </form>
+
+    <h3 class="titulo-lista-tareas">Lista de Tareas</h3>
+    <form id="form-2" class="form-tareas">
+
+
+    </form>
+
+    <section>
+        <h2>Tareas Pendientes</h2>
+        <main id="tareas-pendientes" class="tareas-pendientes">
+        </main>
+    </section>
+
+    <template id="template-tarea">
+        <section class="section-tarea">
+            <div class="tarea">
+                <input type="text" class="tituloTarea" required>
+                <br>
+                <textarea class="descripcionTarea" required></textarea>
+            </div>
+        </section>
+    </template>
+
+    <template id="template-tarea-creada">
+        <section class="section-tarea-creada">
+            <h3 class="titulo-tarea">titulo tarea</h3>
+            <p class="descripcion-tarea">Descripción tarea</p>
+            <div class="confirmacion-input">
+                <label>Terminado</label>
+                <input name="confirmacion-tarea" type="checkbox">
+            </div>
+        </section>
+    </template>
+
+    <script src="script/index.js" type="module"></script>
+</body>
+
+</html>

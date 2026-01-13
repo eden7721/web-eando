@@ -1,0 +1,41 @@
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+h3 {
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.tareas-pendientes{
+    width: 90vw;
+    margin: 2rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+.tareas-pendientes h2 {
+    text-align: center;
+}
+.section-tarea-creada {
+    background-color: aqua;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.section-tarea-creada h3:first-child {
+    font-size: 1.7rem;
+    text-align: center;
+}
+.section-tarea-creada p{
+    text-align: justify;
+    font-size: 1.2rem;
+}
