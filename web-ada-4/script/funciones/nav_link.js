@@ -1,23 +1,17 @@
 const d = document;
-export default function navLinkAnimation(idBtn, img, options = null){
-
-    const $img = d.querySelector(img);
-
-    const $p = d.querySelector(options);
+export default function navLinkAnimation(classBtn, optionP = false) {
     d.addEventListener("mouseover", e => {
-        if(e.target.matches(idBtn)) {
-            if($p) $p.style.setProperty("opacity", "0");
-            $img.classList.remove("nav-js-animation-down");
-            $img.classList.add("nav-js-animation-up");
-            console.log($img);
+        if (e.target.classList.contains(classBtn)) {
+            if(optionP) e.target.previousElementSibling.style.setProperty("opacity", "0");
+            e.target.nextElementSibling.classList.remove("nav-js-animation-down");
+            e.target.nextElementSibling.classList.add("nav-js-animation-up");
         }
     });
     d.addEventListener("mouseout", e => {
-        if(e.target.matches(idBtn)) {
-            if($p) $p.style.setProperty("opacity", "1");
-            $img.classList.remove("nav-js-animation-up");
-            $img.classList.add("nav-js-animation-down");
-            console.log($img);
+        if (e.target.classList.contains(classBtn)) {
+            if(optionP) e.target.previousElementSibling.style.setProperty("opacity", "1");
+            e.target.nextElementSibling.classList.remove("nav-js-animation-up");
+            e.target.nextElementSibling.classList.add("nav-js-animation-down");
         }
     });
 }

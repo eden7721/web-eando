@@ -9,8 +9,9 @@ const d = document,
 d.addEventListener("DOMContentLoaded", e=> {
     if(d.querySelector("title").textContent === "Apuntes Javascript")imgRandomizer("img-meme", 4);
     abrirConsejo("#btn-advice-open", "#btn-advice-close", ".advice");
-    navLinkAnimation("#nav-link-js", ".nav-js img", ".nav-js p");
+    navLinkAnimation("nav-link",true);
+    /*
     navLinkAnimation("#nav-link-css", ".nav-css img", ".nav-css p");
     navLinkAnimation("#nav-link-html", ".nav-html img", ".nav-html p");
-    navLinkAnimation("#nav-link-csharp", ".nav-csharp img", ".nav-csharp p");
+    navLinkAnimation("#nav-link-csharp", ".nav-csharp img", ".nav-csharp p");*/
 });
