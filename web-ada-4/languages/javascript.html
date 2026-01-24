@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apuntes Javascript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style/normalize.css">
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+
+<body>
+    <article class="code-article">
+        <h2>Let, var, const </h2>
+        <section class="section-code example">
+            <h3>Examina el código</h3>
+            <pre class="code-js"><code>
+                <span class="code-commentary">//Declaramos tres variables</span>
+                <span class="code-variable">let</span> nombre1 = <span class="code-string">"Adan"</span>;
+                <span class="code-variable">var</span> nombre2 = <span class="code-string">"Eden"</span>;
+                <span class="code-variable">const</span> <span class="code-obj">nombre3</span> = <span class="code-string">"Edan"</span>;
+                
+                <span class="code-commentary">//Imprimo las variables en consola</span>
+                <span class="code-obj">console</span>.<span class="code-method">log</span>(nombre1, nombre2, <span class="code-obj">nombre3</span>);
+            </code></pre>
+            <pre class="output"><code>
+                => Adan Eden Edan
+            </code></pre>
+        </section>
+        <section class="section-code theory">
+            <h3>¿Cuál es la diferencia entre cada una?</h3>
+            <p>
+                Cuando los programadores usaban var para declarar variables se enfrentaban a este problema, declarar una
+                variable con 'var' daba paso al error de sobreescribir tu variable sin darte cuenta, el scope de
+                funciones, bucles, etc. No es respetado por var. Si vienes de otros lenguajes puedes darte cuenta de que
+                el primer 'console.log' no debería funcionar ya que 'nombre' esta declarado en el scope de la función
+                'saludo()'.
+            </p>
+            <pre class="code-js"><code>
+                <span class="code-variable">function</span> <span class="code-method">saludo</span>(){
+                    <span class="code-variable">let</span> nombre = <span class="code-string">"adan"</span>;
+                    <span class="code-variable">return</span> <span class="code-string">"hola"</span>, nombre;
+                }
+
+                <span class="code-obj">console</span>.<span class="code-method">log</span>(nombre)
+                <span class="code-obj">console</span>.<span class="code-method">log</span>(<span class="code-method">saludo</span><span class="code-variable">()</span>);
+            </code></pre>
+            <pre class="output"><code>
+                => adan
+                => hola adan
+            </code></pre>
+
+            <p>
+                Este 'error' se soluciona con la implementación de 'let' ahora como en la mayoría de lenguajes de
+                programación cada variable declarada con let en su respectivo scope solo existe en ese ámbito.
+            </p>
+
+            <pre class="code-js"><code>
+                <span class="code-variable">function</span> <span class="code-method">saludo</span>(){
+                    <span class="code-variable">let</span> nombre = <span class="code-string">"adan"</span>;
+                    <span class="code-variable">return</span> <span class="code-string">"hola"</span>, nombre;
+                }
+
+                <span class="code-obj">console</span>.<span class="code-method">log</span>(nombre)
+                <span class="code-obj">console</span>.<span class="code-method">log</span>(<span class="code-method">saludo</span><span class="code-variable">()</span>);
+            </code></pre>
+            <pre class="output"><code>
+                <span class="code-error">=> nombre is not defined</span>
+            </code></pre>
+
+            <p>
+                No olvidemos la existencia de 'const', como el nombre lo indica hace referencia a constante, cuando
+                declaramos una constante el valor no puede ser modificado. Tampoco puedes crear constantes sin declarar
+                su valor como en 'let'.
+            </p>
+            <pre class="code-js"><code>
+                <span class="code-commentary">//const nombre; <span class="code-error">error</span></span>
+                <span class="code-variable">const</span> <span class="code-obj">nombre</span> = <span class="code-string">"eden"</span>;
+                <span class="code-commentary">//nombre = "adan" <span class="code-error">error</span></span>
+                <span class="code-obj">console</span>.<span class="code-method">log</span>(<span class="code-obj">nombre</span>);
+            </code></pre>
+            <pre class="output"><code>
+                => eden
+            </code></pre>
+            <p>Paso por valor y por referencia es el próximo tema que voy a tocar, @Eden repasa imbécil que al final
+                explicaste el concepto al revés xdxdd.</p>
+        </section>
+
+        <button id="btn-advice-open" class="btn-code btn-open">Consejito</button>
+        <aside class="advice close">
+            <div class="code-advice">
+                <h3>Consejoide</h3>
+                <p>
+                    No uses 'var', no es viable y puede terminar ocasionando problemas a la hora de renombrar variables, usa 'const' como convención en valores por referencia.
+                    Tratare de explicarte como entendí las variables por valor y por referencia.
+                </p>
+                <small>Meme</small>
+                <img id ="img-meme" alt="Momazo">
+                <button id="btn-advice-close" class="btn-code">Cerrar</button>
+            </div>
+        </aside>
+    </article>
+    <script src="../script/index.js" type="module"></script>
+</body>
+
+</html>

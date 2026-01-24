@@ -1,0 +1,315 @@
+:root {
+    --primary-color: #008cff;
+    --secondary-color: #434343;
+    --windows-advice-color: rgb(0 0 0 / 0.9);
+    --background-code: #282a36;
+    --background-color: rgb(0 0 0 / 0.7);
+    --output-color: #00ff2f;
+    --language-color: #6b6b6b;
+    --commentary-color: #6b6b6b;
+    --error-color: #ff0077;
+    --const-color: #bd93f9;
+    --var-color: #ff79c6;
+    --method-color: #50fa7b;
+    --string-color: #f1fa8c;
+    --primary-text-color: #fff;
+    --js-color: #f7df1e;
+}
+html {
+    font-family: "Nunito",sans-serif;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    font-size: 2rem;
+    width: 45vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: var(--primary-color);
+    border-left: thin solid var(--primary-color);
+    border-right: thin solid var(--primary-color);
+    cursor:default;
+    transition: color .2s ease-in-out;
+}
+h2:hover {
+    color: var(--error-color);
+    border-left: thin solid var(--error-color);
+    border-right: thin solid var(--error-color);
+}
+h3 {
+    color: var(--primary-color);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+p {
+    color: var(--secondary-color);
+}
+
+.code-article {
+    display: flex;
+    flex-direction: column;
+}
+
+/************************** INDEX.HTML ***********************/
+/* Header Section */
+
+.header-section { 
+    background-color: var(--secondary-color);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/img/backgrounds/background-wukong.jpg);
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+}
+.background-opacity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background-color);
+    z-index: 998;
+}
+.header-section h1 {
+    position: relative;
+    z-index: 1000;
+    margin: 0;
+    color: var(--primary-text-color);
+    font-size: 3rem;
+}
+.header-section p {
+    color: var(--primary-text-color);
+    z-index: 999;
+}
+
+@keyframes monkeyAnimation {
+    0% {
+        right: -20%;
+        opacity: 0;
+    }
+    100%{
+        right: -15%;
+        opacity: 1;
+    }
+}
+.header-section img {
+    position: absolute;
+    height: auto;
+    width: 45%;
+    right: -15%;
+    bottom: 0;
+    animation: monkeyAnimation ease 1s forwards;
+}
+.nav-bar{
+    margin-left: auto;
+    margin-right: auto;
+    width: 45vw;
+    display: grid;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+.nav-bar p {
+    color: var(--primary-text-color);
+    transition: all .2s ease;
+}
+.nav-section {
+    background-color: var(--background-code);
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+.nav-section a {
+    text-decoration: none;
+    color: var(--primary-color);
+    align-self: stretch;
+    border-left: thin solid var(--primary-color);
+    border-right: thin solid var(--primary-color);
+    transition: all .2s ease;
+    position: relative;
+    z-index: 999;
+}
+.nav-section a:hover {
+    color: var(--error-color);
+    font-weight: bold;
+    border-left: thin solid var(--error-color);
+    border-right: thin solid var(--error-color);
+}
+.nav-section{
+    position: relative;
+}
+.nav-js h3,
+.nav-js a{
+    color: var(--js-color);
+}
+.nav-js a{
+    color: var(--js-color);
+    border-left: thin solid var(--js-color);
+    border-right: thin solid var(--js-color);
+    
+}
+.nav-section img{
+    position: absolute;
+    z-index: 998;
+    width: 70%;
+    height: auto;
+    bottom: -100%;
+}
+.nav-js-animation-up {
+    transform: translate(0, -150%);
+    transition: transform .5s ease;
+}
+.nav-js-animation-down {
+    transform: translate(0, 0rem);
+    transition: transform .5s ease;
+}
+
+
+
+
+
+
+
+
+
+/************************** JAVASCRIPT.HTML ***********************/
+/* Código */
+pre{
+    margin: .5rem 0;
+}
+.section-code {
+    width: 45vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+}
+.code-js,
+.output {
+    font-size: 1rem;
+    background-color: var(--background-code);
+    color: #fff;
+    border-top-right-radius: .4rem;
+    border-bottom-right-radius: .4rem;
+    position: relative;
+}
+.output {
+    background-color: var(--background-code);
+    color: var(--output-color);
+}
+.code-js::before,
+.output::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -.4rem;
+    background-color: inherit;
+    height: 100%;
+    width: .2rem;
+}
+.code-js::after,
+.output::after {
+    content: "JavaScript";
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    color: var(--language-color);
+}
+.output::after {
+    content: "Output";
+}
+.code-commentary {
+    color: var(--language-color);
+}
+.code-error {
+    color: var(--error-color);
+}
+
+
+/* Color código */
+.code-variable {
+    color: var(--var-color);
+}
+.code-obj {
+    color: var(--const-color);
+}
+.code-string {
+    color: var(--string-color);
+}
+.code-method {
+    color: var(--method-color);
+}
+
+
+
+/* ************* Code Advice *************** */
+.advice {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--windows-advice-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.code-advice {
+    width: 30vw;
+    padding: 1rem;
+}
+.code-advice p,
+.code-advice small {
+    color: var(--primary-text-color);
+}
+.code-advice h3 {
+    font-size: 2rem;
+    color: var(--error-color);
+    text-align: center;
+}
+.code-advice img {
+    width: 100%;
+    height: auto;
+}
+.open {
+    opacity: 1;
+    visibility: visible;
+    transition: all .3s ease;
+}
+.close {
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+}
+
+
+/* ******* Botónes ************* */
+.btn-code {
+    background-color: transparent;
+    color: var(--error-color);
+    font-weight: bold;
+    width: 100%;
+    padding: 1rem;
+    border: 0;
+    outline: thin solid var(--error-color);
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+}
+.btn-code:hover {
+    background-color: var(--error-color);
+    color: var(--primary-text-color);
+    outline: none;
+}
+.btn-open {
+    width: 45vw;
+    align-self: center;
+}
