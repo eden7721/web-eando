@@ -106,6 +106,13 @@ p {
     bottom: 0;
     animation: monkeyAnimation ease 1s forwards;
 }
+
+/* Main Section */
+
+.main-section {
+    background-color: var(--commentary-color);
+    height: 100vh;
+}
 .nav-bar{
     margin-left: auto;
     margin-right: auto;
@@ -118,6 +125,7 @@ p {
 .nav-bar p {
     color: var(--primary-text-color);
     transition: all .2s ease;
+    overflow-y: hidden;
 }
 .nav-section {
     background-color: var(--background-code);
@@ -131,6 +139,7 @@ p {
 }
 .nav-section a {
     text-decoration: none;
+    text-align: center;
     color: var(--primary-color);
     align-self: stretch;
     border-left: thin solid var(--primary-color);
@@ -139,7 +148,7 @@ p {
     position: relative;
     z-index: 999;
 }
-.nav-section a:hover {
+.nav-section a:hover { /* Comportamiento a sobreescribir*/
     color: var(--error-color);
     font-weight: bold;
     border-left: thin solid var(--error-color);
@@ -147,6 +156,7 @@ p {
 }
 .nav-section{
     position: relative;
+    height: 15rem;
 }
 .nav-js h3,
 .nav-js a{
@@ -156,22 +166,42 @@ p {
     color: var(--js-color);
     border-left: thin solid var(--js-color);
     border-right: thin solid var(--js-color);
-    
 }
-.nav-section img{
+.nav-js a:hover {
+    color: var(--secondary-color);
+    background-color: var(--js-color);
+    font-weight: bold;
+    border-left: thin solid var(--js-color);
+    border-right: thin solid var(--js-color);
+}
+.nav-section-img{
     position: absolute;
     z-index: 998;
     width: 70%;
     height: auto;
-    bottom: -100%;
+    top: 100%;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 .nav-js-animation-up {
-    transform: translate(0, -150%);
-    transition: transform .5s ease;
+    top: 10%;
+    height: 75%;
+    width: auto;
+    transition: top .5s ease;
+    animation: opacity ease 1s;
 }
 .nav-js-animation-down {
-    transform: translate(0, 0rem);
-    transition: transform .5s ease;
+    top: 100%;
+    height: 75%;
+    width: auto;
+    transition: top .5s ease;
 }
 
 
